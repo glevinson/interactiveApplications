@@ -39,9 +39,9 @@ public class GuiApp {
         panel.add(textField);
 
         for (int i = 0; i < 10; i++){
-            JButton button = new JButton(String.valueOf(i));
+            JButton number = new JButton(String.valueOf(i));
             int finalI = i;
-            button.addActionListener(new ActionListener() {
+            number.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                     textField.setText(String.valueOf(finalI));
@@ -49,7 +49,7 @@ public class GuiApp {
                 }
             });
 
-            panel.add(button);
+            panel.add(number);
         }
 
         for(int i = 0; i < operators.length; i++){
