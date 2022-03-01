@@ -3,30 +3,11 @@ package ic.doc;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
-import java.util.Stack;
+
 
 public class GuiApp {
 
-    public class RPNCalculator {
-        Stack <Integer> numberList = new Stack<Integer>();
-        public void addNumberToStack(int i){
-            numberList.push(i);
-        }
-        public int findResult(String a){
-           int num1 = numberList.pop();
-           int num2 = numberList.pop();
-           if(Objects.equals(a, "+"))
-               return num1+num2;
-           if(Objects.equals(a, "-"))
-                return num2-num1;
-           if(Objects.equals(a, "/"))
-                return num2/num1;
-           return num1*num2;
-        }
-    }
-
-    RPNCalculator calc = new RPNCalculator();
+    Model calc = new Model();
 
     String[] operators = {"+", "-", "*", "/"};
 
