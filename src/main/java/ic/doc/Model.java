@@ -10,17 +10,19 @@ public class Model {
             numberList.push(i);
             view.change(i);
         }
-        public int findResult(String a){
+        public void findResult(String a){
             int num1 = numberList.pop();
             int num2 = numberList.pop();
-            if(Objects.equals(a, "+"))
-                return num1+num2;
-            if(Objects.equals(a, "-"))
-                return num2-num1;
-            if(Objects.equals(a, "/"))
-                return num2/num1;
-            return num1*num2;
-        }
+
+            switch (a){
+                case "+" -> addNumberToStack(num1+num2);
+                case "-" -> addNumberToStack(num2 -num1);
+                case "*" -> addNumberToStack(num2 * num1);
+                case "/" -> addNumberToStack(num2 / num1);
+                }
+            }
+
+
 
     public void setView(View view) {
             this.view = view;

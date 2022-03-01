@@ -25,7 +25,6 @@ public class GuiApp implements View{
             number.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-
                     calc.addNumberToStack(finalI);
                 }
             });
@@ -40,9 +39,7 @@ public class GuiApp implements View{
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                     if(calc.numberList.size() >= 2){
-                        int result = calc.findResult(operators[finalI]);
-                        textField.setText(String.valueOf(result));
-                        calc.addNumberToStack(result);
+                        calc.findResult(operators[finalI]);
                     }
                 }
             });
