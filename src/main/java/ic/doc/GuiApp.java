@@ -5,18 +5,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class GuiApp {
+public class GuiApp implements View{
 
     Model calc = new Model();
+    JTextField textField = new JTextField(10);
 
     String[] operators = {"+", "-", "*", "/"};
-
     private void display() {
         JFrame frame = new JFrame("RPN App");
         frame.setSize(600,400);
-
+        calc.setView(this);
         JPanel panel = new JPanel();
-        JTextField textField = new JTextField(10);
+
         panel.add(textField);
 
         for (int i = 0; i < 10; i++){
@@ -25,7 +25,7 @@ public class GuiApp {
             number.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    textField.setText(String.valueOf(finalI));
+
                     calc.addNumberToStack(finalI);
                 }
             });
@@ -56,5 +56,10 @@ public class GuiApp {
 
     public static void main(String[] args){
         new GuiApp().display();
+    }
+
+    @Override
+    public void change(int i) {
+        textField.setText(String.valueOf(i));
     }
 }
