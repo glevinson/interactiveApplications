@@ -38,9 +38,9 @@ public class GuiApp implements View{
             operator.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    if(calc.numberList.size() >= 2){
+
                         calc.findResult(operators[finalI]);
-                    }
+
                 }
             });
             panel.add(operator);
