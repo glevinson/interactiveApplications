@@ -79,6 +79,23 @@ public class ModelTest {
         assertThat(String.valueOf(model.numberList.peek()), is("2"));
 
     }
+    @Test
+    public void canDoOperationsOnStack(){
+        GuiApp app = new GuiApp();
+        model.setView(app);
+        model.addNumberToStack(4);
+        model.addNumberToStack(2);
+        model.addNumberToStack(1);
+        model.addNumberToStack(4);
+        model.addNumberToStack(2);
+        model.findResult("+");
+        assertThat(String.valueOf(model.numberList.peek()), is("6"));
+        model.findResult("+");
+        assertThat(String.valueOf(model.numberList.peek()), is("7"));
+        model.findResult("*");
+        assertThat(String.valueOf(model.numberList.peek()), is("14"));
+
+    }
 
 
 
