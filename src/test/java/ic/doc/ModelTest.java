@@ -4,8 +4,8 @@ import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.Test;
 
-import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 
 public class ModelTest {
@@ -15,9 +15,9 @@ public class ModelTest {
     View viewMock = context.mock(View.class);
 
     @Test
-    public void doesNotCalculateIfStackIsSmallerThanTwo(){
+    public void doesNotCalculateIfStackIsSmallerThanTwo() {
 
-        context.checking(new Expectations(){{
+        context.checking(new Expectations() {{
             never(viewMock);
         }});
 
@@ -32,7 +32,7 @@ public class ModelTest {
     }
 
     @Test
-    public void canAddTwoNumbers(){
+    public void canAddTwoNumbers() {
         GuiApp app = new GuiApp();
         model.setView(app);
         model.addNumberToStack(4);
@@ -44,7 +44,7 @@ public class ModelTest {
     }
 
     @Test
-    public void canMultiplyTwoNumbers(){
+    public void canMultiplyTwoNumbers() {
         GuiApp app = new GuiApp();
         model.setView(app);
         model.addNumberToStack(4);
@@ -56,7 +56,7 @@ public class ModelTest {
     }
 
     @Test
-    public void canSubtractTwoNumbers(){
+    public void canSubtractTwoNumbers() {
         GuiApp app = new GuiApp();
         model.setView(app);
         model.addNumberToStack(4);
@@ -69,7 +69,7 @@ public class ModelTest {
 
 
     @Test
-    public void canDivideTwoNumbers(){
+    public void canDivideTwoNumbers() {
         GuiApp app = new GuiApp();
         model.setView(app);
         model.addNumberToStack(4);
@@ -79,8 +79,9 @@ public class ModelTest {
         assertThat(String.valueOf(model.numberList.peek()), is("2"));
 
     }
+
     @Test
-    public void canDoOperationsOnStack(){
+    public void canDoOperationsOnStack() {
         GuiApp app = new GuiApp();
         model.setView(app);
         model.addNumberToStack(4);
@@ -96,7 +97,6 @@ public class ModelTest {
         assertThat(String.valueOf(model.numberList.peek()), is("14"));
 
     }
-
 
 
 }
